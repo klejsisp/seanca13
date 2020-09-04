@@ -1,0 +1,47 @@
+﻿@model seanca13.ViewModels.RegisterViewModel
+@{
+    ViewBag.Title = "Regjistrim";
+    
+}
+
+<h2>Regjistrohu !</h2>
+
+@using (Html.BeginForm("Regjistrim", "Account", FormMethod.Post))
+{
+<div class="form-row">
+    <div class="form-group col-md-12">
+        @Html.LabelFor(tmp => tmp.name)
+        @Html.TextBoxFor(tmp => tmp.name, new { placeholder = "Name", @class = "form-control" })
+        @Html.ValidationMessageFor(tmp => tmp.name)
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(tmp => tmp.username)
+        @Html.TextBoxFor(tmp => tmp.username, new { placeholder = "Username", @class = "form-control" })
+        @Html.ValidationMessageFor(tmp => tmp.username)
+    </div>
+    <div class="form-group col-md-12">
+        @Html.LabelFor(tmp => tmp.password)
+        @Html.PasswordFor(tmp => tmp.password, new { placeholder = "Password", @class = "form-control" })
+        @Html.ValidationMessageFor(tmp => tmp.password)
+    </div>
+    <div class="form-group col-md-12">
+        @Html.LabelFor(tmp => tmp.confirmpassword)
+        @Html.PasswordFor(tmp => tmp.confirmpassword, new { placeholder = "Confirm Password", @class = "form-control" })
+        @Html.ValidationMessageFor(tmp => tmp.confirmpassword)
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(tmp => tmp.email)
+        @Html.TextBoxFor(tmp => tmp.email, new { placeholder = "Email", @class = "form-control" })
+        @Html.ValidationMessageFor(tmp => tmp.email)
+    </div>
+
+   
+
+</div>
+
+  
+
+    <button type="submit" class="btn btn-outline-success">Regjistrohu</button>
+}

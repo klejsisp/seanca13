@@ -1,0 +1,30 @@
+﻿@model List<seanca13.Identity.ApplicationUser>
+@{
+    ViewBag.Title = "Menaxho";
+}
+
+<h2>Menaxho Perdoruesit</h2>
+
+<a href="/Home/Create">Create</a>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Username</th>
+        <th>Fshi</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.emri</td>
+            <td>@item.Email</td>
+            <td>@item.UserName</td>
+            <td>@Html.ActionLink("Delete", "Delete", new { id = item.Id, controller = "Home" })</td>
+        </tr>
+
+
+
+    }
+</table>
+

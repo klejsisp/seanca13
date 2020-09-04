@@ -1,0 +1,36 @@
+﻿@model seanca13.Identity.ApplicationUser
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Shto nje perdorues te ri</h2>
+
+<form action="/Home/Create" method="post">
+    <div class="form-group col-md-12">
+        @Html.LabelFor(tmp => tmp.UserName)
+        @Html.TextBoxFor(temp => temp.UserName, new { placeholder = "Username", @class = "form-control" })
+        @Html.ValidationMessageFor(tmp => tmp.UserName)
+    </div>
+    <div class="form-group col-md-12">
+        @Html.LabelFor(tmp => tmp.emri)
+        @Html.TextBoxFor(tmp => tmp.emri, new { placeholder = "Name", @class = "form-control" })
+        @Html.ValidationMessageFor(tmp => tmp.emri)
+    </div>
+    <div class="form-group col-md-12">
+        @Html.LabelFor(tmp => tmp.Email)
+        @Html.TextBoxFor(tmp => tmp.Email, new { placeholder = "Email", @class = "form-control" })
+        @Html.ValidationMessageFor(tmp => tmp.Email)
+    </div>
+    <div class="form-group col-md-12">
+        @Html.LabelFor(tmp => tmp.PasswordHash)
+        @Html.PasswordFor(tmp => tmp.PasswordHash, new { placeholder = "Password", @class = "form-control" })
+        @Html.ValidationMessageFor(tmp => tmp.PasswordHash)
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Shto</button>
+    <hr />
+
+</form>
+
+

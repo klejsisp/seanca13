@@ -1,0 +1,26 @@
+﻿@model seanca13.ViewModels.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+   
+}
+
+<h2>Logohu</h2>
+<form action="/Account/Login" method="post">
+    <div class="form-group col-md-12">
+        @Html.LabelFor(tmp => tmp.username)
+        @Html.TextBoxFor(temp => temp.username, new { placeholder = "Username", @class = "form-control" })
+        @Html.ValidationMessageFor(tmp => tmp.username)
+    </div>
+    <div class="form-group col-md-12">
+        @Html.LabelFor(tmp => tmp.password)
+        @Html.TextBoxFor(tmp => tmp.password, new { placeholder = "Password", @class = "form-control" })
+        @Html.ValidationMessageFor(tmp => tmp.password)
+    </div>
+    <button type="submit" class="btn btn-primary">Logohu</button>
+    <hr />
+
+    <div> @ViewBag.Mesazh</div>
+    <hr />
+    <a href="/Account/Regjistrim">Regjistrimi</a>
+</form>
+
